@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nhahv.managermoney.ui.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.nhahv.managermoney.ui.history.HistoryFragment"
+        android:label="history_fragment"
+        tools:layout="@layout/history_fragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.nhahv.managermoney.ui.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+</navigation>
