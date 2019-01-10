@@ -1,6 +1,5 @@
 package com.nhahv.managermoney.ui.home
 
-import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.nhahv.managermoney.BaseViewModel
@@ -16,23 +15,23 @@ class HomeViewModel @Inject constructor(private val postRepository: PostReposito
     val userWeds = MutableLiveData<List<UserWedding>>()
 
     init {
-        loadDatas()
+        loadPosts()
     }
 
-    @SuppressLint("CheckResult")
-    private fun loadDatas() {
-        subscription = postRepository.getRemotePosts()
+    private fun loadPosts() {
+        /*subscription = postRepository.getRemotePosts()
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.io())
             .doOnSubscribe { }
             .doOnTerminate { }
             .subscribe({ result ->
-                println("===================== success")
-                postRepository.insertPosts(result)
+                responseData.value = Gson().toJson(result)
+                println("====================== success")
             }, { println("====================== Error") })
+*/
 
+//        postRepository.getLocalPosts().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({ result -> responseData.value = Gson().toJson(result) }, {})
 
-        postRepository.getLocalPosts().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ result -> responseData.value = Gson().toJson(result) }, {})
     }
 }

@@ -16,7 +16,7 @@ class RepositoryModule {
     fun providePostLocalRepository(postDao: PostDao) = PostLocalDataSource(postDao)
 
     @Provides
-    fun providePostRemoteRepository(postAPI: PostAPI) = PostRemoteDataSource(postAPI)
+    fun providePostRemoteRepository(postAPI: PostAPI, postDao: PostDao) = PostRemoteDataSource(postAPI, postDao)
 
     @Provides
     fun providePostRepository(postLocal: PostLocalDataSource, postRemote: PostRemoteDataSource): PostRepository {

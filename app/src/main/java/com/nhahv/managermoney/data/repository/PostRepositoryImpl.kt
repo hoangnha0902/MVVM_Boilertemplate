@@ -1,7 +1,7 @@
 package com.nhahv.managermoney.data.repository
 
 import com.nhahv.managermoney.data.model.Post
-import io.reactivex.Flowable
+import io.reactivex.Observable
 
 
 class PostRepositoryImpl(
@@ -9,11 +9,11 @@ class PostRepositoryImpl(
         private val postRemoteDataSource: PostRemoteDataSource
 ) : PostRepository {
 
-    override fun getLocalPosts(): Flowable<List<Post>> {
+    override fun getLocalPosts(): Observable<List<Post>> {
         return postLocalDataSource.getPostList()
     }
 
-    override fun getRemotePosts(): Flowable<List<Post>> {
+    override fun getRemotePosts(): Observable<List<Post>> {
         return postRemoteDataSource.getPostList()
     }
 

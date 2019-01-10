@@ -7,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.nhahv.managermoney.BaseFragment
-import com.nhahv.managermoney.BaseRecyclerViewAdapter
-import com.nhahv.managermoney.BaseViewHolder
+import com.nhahv.managermoney.*
 
-import com.nhahv.managermoney.R
 import com.nhahv.managermoney.data.model.UserWedding
 import com.nhahv.managermoney.utils.UserWedCallback
 import com.nhahv.managermoney.utils.addDecoration
@@ -57,10 +54,4 @@ class HomeFragment : BaseFragment() {
         })
     }
 
-}
-
-class UserWedViewHolder(view: View) : BaseViewHolder<UserWedding>(view) {
-    override fun bind(item: UserWedding, position: Int) {
-
-    }
 }
